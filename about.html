@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT</title>
+    <link rel="icon" href="images/FAVICON (2).png" type="image/x-icon" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-size: 20px;
+    font-family: "Work Sans", sans-serif;
+    color: #162DDB;
+}
+
+/* NAVBAR -------------------------------------------------------- */
+.navbar a {
+    color: #162DDB;
+    text-decoration: none;
+}
+
+.navbar {
+    background: #fff;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+}
+
+.navbar-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container h3 {
+    font-size: 40px;
+}
+
+.navbar-side {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    width: 50px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    
+}
+
+.navbar-side h4, .dropdown-menu {
+    margin-left: 100px;
+}
+
+.dropdown-menu {
+    position: relative;
+}
+
+.dropdown-menu .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.dropdown-menu .icon div{
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.dropdown-menu #d1 {
+    width: 20px;
+    height: 3px;
+    background: #162DDB;
+    border-radius: 3px;
+}
+
+.dropdown-menu #d2 {
+    width: 40px;
+    height: 5px;
+    background: #162DDB;
+    border-radius: 3px;
+
+}
+
+.dropdown-menu #d3 {
+    width: 30px;
+    height: 4px;
+    background: #162DDB;
+    border-radius: 3px;
+
+}
+
+.dropdown-menu-content {
+    width: 100vw;
+    position: absolute;
+    list-style-type: none;
+    color: #162DDB;
+    right: 0;
+    top: 30px;
+    z-index: 9999;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-menu-content > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.dropdown-menu-content > div > div {
+    background-color: #162DDB;
+    opacity: 0.5;
+    padding: 1rem;
+    display: none;
+}
+
+.dropdown-menu-content li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu-content li:nth-last-child(1) {
+    margin-bottom: 0;
+}
+
+.dropdown-menu-content li a {
+    color: #fff;
+}
+
+.dropdown-menu:hover .dropdown-menu-content>div>div {
+    display: block;
+}
+
+.dropdown-menu-content li:hover {
+    font-weight: bold;
+}
+
+/* CONTAINER -------------------------------------------------------- */
+.container {
+    padding-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-container {
+    width: 100%;
+    height: 100vh;
+}
+
+/* CONTENT 1 -------------------------------------------------------- */
+.content1 {
+    margin-top: 50px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+
+}
+
+.content1-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.text1 {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+}
+
+.text1 h1 {
+    margin-bottom: 20px;
+    font-size: 5rem;
+}
+
+.content1 .image1 {
+    right: 0;
+    width: 900px;
+    height: 700px;
+    background-image: url(/VIT/images/about-me.png);
+    background-size: cover;
+    position: absolute;
+}
+
+/* CONTENT 2 -------------------------------------------------------- */
+.content2 {
+    background: #162DDB;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.content2-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    color: #fff;
+}
+
+.content2 .text2 {
+    width: 37%;
+    position: absolute;
+    right: 5%;
+    text-align: end;
+}
+
+.text2 h1 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.content2 .image2 {
+    width: 700px;
+    height: 400px;
+    background-image: url(/VIT/images/about-2.png);
+    background-size: cover;
+    border: 8px solid #fff;
+}
+
+/* CONTENT 3 -------------------------------------------------------- */
+.content3 {
+    width: 100%;
+    height: 90%;
+    background-image: url(/VIT/images/about-3\ \(1\).png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content3-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(22, 45, 219, 0.5);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 1.5rem;
+    box-shadow: 5px 5px 17px #03138d
+}
+
+.text3 h1 {
+    margin-bottom: 10px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* CONTENT 4 -------------------------------------------------------- */
+.content4 {
+    width: 100%;
+    height: 90%;
+    background: #162DDB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.content4-wrapper {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content4-wrapper h1 {
+    font-size: 3rem;
+}
+
+.sub-projects {
+    margin-top: 25px;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sub-projects #songfinding,#createmel {
+    height: 100%;
+}
+
+.sub-projects #songfinding #picture{
+    width: 450px;
+    height: 450px;
+    background: #fff;
+    margin-bottom: 10px;
+    background-image: url(/VIT/images/about-songfind.png);
+    background-size: cover;
+}
+
+.sub-projects #createmel #picture{
+    width: 450px;
+    height: 450px;
+    background: #fff;
+    margin-bottom: 10px;
+    background-image: url(/VIT/images/about-create.png);
+    background-size: cover;
+}
+
+/* CONTENT 5 -------------------------------------------------------- */
+.content5 {
+    background: #fff;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.content5-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #162DDB;
+}
+
+.content5 .text5 {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.text5 h1 {
+    margin-bottom: 20px;
+    font-size: 5rem;
+}
+
+.text5 div {
+    margin-bottom: 15px;
+}
+
+.content5 .image5 {
+    width: 1200px;
+    height: 700px;
+    background-image: url(/VIT/images/about-VRT.png);
+    background-size: cover;
+
+}
+
+/* MEDIA QUERY -------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+    .navbar #home, #about {
+        display: none;
+    }
+        /* CONTENT 1 */
+    .content1-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text1 {
+        position: static;
+        width: 70%;
+        font-size: 100%;
+    }
+
+    .content1-wrapper .image1 {
+        display: none;
+    }
+
+     /* CONTENT 2 */
+     .content2-wrapper {
+        width: fit-content;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .content2-wrapper .image2 {
+        height: 50%;
+        width: 500px;
+        display: none;
+    }
+
+    .content2-wrapper .text2 {
+        text-align: start;
+        width: 85%;
+        padding: 1rem;
+        font-size: 100%;
+    }
+
+    /* CONTENT 3 */
+    .content3-wrapper {
+        width: 70%;
+        font-size: 100%;
+    }
+
+    /* CONTENT 4 */
+    .content4 {
+        height: fit-content;
+        padding: 1rem;
+    }
+    .sub-projects {
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content4-wrapper h1 {
+        text-align: center;
+    }
+
+    .sub-projects #songfinding, #createmel {
+        height: fit-content;
+        margin-bottom: 10px;
+    }
+
+    .sub-projects #songfinding #picture {
+        width: 230px;
+        height: 230px;
+    }
+
+    .sub-projects #createmel #picture {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    /* CONTENT 5 */
+    .content5 {
+        height: fit-content;
+    }
+    .content5-wrapper {
+        padding-top: 50px;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .content5 .image5 {
+        width: 500px;
+        height: 450px;
+    }
+
+    .content5 .text5 {
+        width: 75%;
+        font-size: 90%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* CONTENT 1 */
+    .text1 {
+        background: rgba(22, 45, 219, 0.5);
+        z-index: 99;
+        color: #fff;
+        padding: 1rem;
+        width: 70%;
+    }
+
+    .text1 h1 {
+        font-size: 4rem;
+    }
+
+     /* CONTENT 2 */
+     .content2-wrapper {
+        width: fit-content;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .content2-wrapper .image2 {
+        height: 320px;
+        width: 500px;
+    }
+
+    .content2-wrapper .text2 {
+        text-align: start;
+        width: 55%;
+        padding: 1rem;
+        background: rgba(225, 225, 225, 0.3);
+    }
+
+    /* CONTENT 3 */
+    .content3-wrapper {
+        width: 70%;
+    }
+
+    /* CONTENT 4 */
+    .content4 {
+        height: fit-content;
+    }
+
+    .sub-projects {
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content4-wrapper h1 {
+        text-align: center;
+    }
+
+    .sub-projects #songfinding, #createmel {
+        height: fit-content;
+        margin-bottom: 10px;
+    }
+
+    .sub-projects #songfinding #picture {
+        width: 370px;
+        height: 370px;
+    }
+
+    .sub-projects #createmel #picture {
+        width: 370px;
+        height: 370px;
+    }
+
+
+    /* CONTENT 5 */
+    .content5 {
+        height: fit-content;
+    }
+
+    .content5-wrapper {
+        padding-top: 50px;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .content5 .image5 {
+        width: 600px;
+        height: 450px;
+    }
+
+    .content5 .text5 {
+        width: 75%;
+    }
+}
+
+/* ---------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+    /* CONTENT 1 */
+    .text1 {
+        background: rgba(22, 45, 219, 0.5);
+        z-index: 99;
+        color: #fff;
+        padding: 1rem;
+    }
+
+    /* CONTENT 2 */
+    .text2 {
+        background: rgba(225, 225, 225, 0.3);
+        padding: 1rem;
+    }
+
+    /* CONTENT 4 */
+    .content4 {
+        padding: 1rem;
+    }
+
+    .sub-projects {
+        height: fit-content;
+    }
+
+    .sub-projects #songfinding, #createmel {
+        height: fit-content;
+    }
+
+    .sub-projects #songfinding #picture {
+        width: 330px;
+        height: 330px;
+        margin-right: 10px;
+    }
+
+    .sub-projects #createmel #picture {
+        width: 330px;
+        height: 330px;
+    }
+
+    /* CONTENT 5 */
+    .content5-wrapper {
+        width: fit-content;
+    }
+
+    .content5 .image5 {
+        width: 700px;
+        height: 450px;
+    }
+
+    .content5 .text5 {
+        z-index: 999;
+        width: 55%;
+    }
+}
+
+/* ---------------------------------------------------------- */
+@media only screen and (min-width: 992px) {
+/* CONTENT 1 */
+.text1 {
+    background: #fff;
+    z-index: 99;
+    color: #162DDB;
+    padding: 1rem;
+    width: 40%;
+}
+
+/* CONTENT 2 */
+.content2 {
+    position: relative;
+}
+
+.content2-wrapper {
+    height: 90%;
+    display: flex;
+}
+
+.content2-wrapper .text2 {
+    width: 40%;
+    background: none;
+    padding: 1rem;
+    position: absolute;
+    right: 5%;
+}
+
+.content2-wrapper .image2 {
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    left: 5%;
+}
+
+/* CONTENT 3 */
+.content3-wrapper {
+    width: 40%;
+}
+
+/* CONTENT 4 */
+.content4 {
+    height: 90%;
+}
+
+.sub-projects {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.sub-projects #songfinding, #createmel {
+    height: fit-content;
+}
+
+.sub-projects #songfinding #picture {
+    width: 370px;
+    height: 370px;
+    margin-right: 10px;
+}
+
+.sub-projects #createmel #picture {
+    width: 370px;
+    height: 370px;
+}
+
+/* CONTENT 5 */
+.content5 {
+    height: 90%;
+    width: 100%;
+}
+
+.content5-wrapper {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.content5 .image5 {
+    width: 1000px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.content5 .text5 {
+    z-index: 99;
+    width: 40%;
+    margin-left: 20px;
+}
+
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <h3>VIT</h3>
+            <div class="navbar-side">
+                <h4 id="home"><a href="index.html">Home</a></h4>
+                <h4 id="about"><a href="about.html">About</a></h4>
+                <div class="dropdown-menu">
+                    <div class="icon">
+                        <div id="d1"></div>
+                        <div id="d2"></div>
+                        <div id="d3"></div>
+                    </div>
+                    
+                    <ul class="dropdown-menu-content">
+                        <div>
+                            <div>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="song.html">Song Finding</a></li>
+                                <li><a href="speech.html">Speech to Text</a></li>
+                                <li><a href="text.html">Text to Speech</a></li>
+                                <li><a href="record.html">Record</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="container-container">
+            <div class="content1">
+                <div class="content1-wrapper">
+                    <div class="text1">
+                        <h1>Hi! I'm Rose</h1>
+                        <div>The idea of VIT comes to me with a lot of emotions. Although currently what this platform provides is still rudimentary and ordinary. 
+                            However, when you read this line, I want to tell you more about my (and soon to be our) missions and goals</div>
+                    </div>
+                    <div class="image1"></div>
+                </div>
+            </div>
+
+            <div class="content2">
+                <div class="content2-wrapper">
+                    <div class="image2"></div>
+                    <div class="text2">
+                        <h1>VIT stands for Voice Integration Technology</h1>
+                        <div class="text">Like eggs, visually they may seem identical to us. Even Leonardo Da Vinci once believed that when his teacher always made him practice 
+                            drawing eggs day after day. But eventually, Leonardo Da Vinci realized that no two eggs are exactly alike. That story is similar to 
+                            our voices. Indeed, the voice we possess is truly unique
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content3">
+                <div class="content3-wrapper">
+                    <div class="text3">
+                        <h1>That's why</h1>
+                        <div>I have a passion for innovations about voices. And that's the mission of VIT. VIT aims to bring to society the wonderful intersection 
+                            of voice, audio, and technology, contributing to making the world more vibrant.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content4">
+                <div class="content4-wrapper">
+                        <h1>Upcoming sub-projects</h1>
+                        <div class="sub-projects">
+                            <div id="songfinding">
+                                <div id="picture"></div>
+                                <h4>Song Finder</h4>
+                            </div>
+                            <div id="createmel">
+                                <div id="picture"></div>
+                                <h4>Eternal Moment</h4>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="content5">
+                <div class="content5-wrapper">
+                    <div class="text5">
+                        <h1>Core Goal</h1>
+                        <div>Alongside some sub-projects that will be completed in the near future, VIT aims for a broader goal of enhancing 
+                            the integration of voice into virtual reality technology to improve user experience. </div>
+                        <div>Imagine being able to create your own space just by using your voice, similar to the generative AI of Photoshop!</div>
+                    </div>
+                    <div class="image5"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
